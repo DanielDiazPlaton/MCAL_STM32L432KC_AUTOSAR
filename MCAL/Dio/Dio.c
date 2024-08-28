@@ -1,12 +1,12 @@
 /**
- ******************************************************************************
+ **************************************************************************************************
  * @file           : Dio.c
  * @author         : Daniel Diaz Platon
  * @brief          : The DIO Driver abstracts the access to the microcontroller's hardware pins.
  *                   Furthermore, it allows the grouping of those pins.
- ******************************************************************************
+ **************************************************************************************************
  */
-
+#include "Dio_Cfg.h"
 #include "Dio.h"
 
 
@@ -16,7 +16,7 @@ Dio_LevelType Dio_ReadChannel( Dio_ChannelType ChannelId ){
 
     switch (ChannelId)
     {
-    case PORT_A_PIN_8:
+    case DIO_CHANNEL_ID_8:
         if(GPIOA->IDR & GPIO_IDR_ID8)
         {
             Dio_Return = STD_HIGH;
@@ -74,7 +74,7 @@ void Dio_WriteChannel( Dio_ChannelType ChannelId, Dio_LevelType Level )
 {
     switch (ChannelId)
     {
-    case PORT_B_PIN_3:
+    case DIO_CHANNEL_ID_16:
         if(STD_HIGH == Level)
         {
             GPIOB->ODR |= GPIO_BRR_BR3;

@@ -34,7 +34,8 @@
  *******************************************************/
 
 typedef struct {
-    uint32 RCC_AHB2ENR_cfg;   // enable clocks of the all peripheral, adc, aes, rng
+    uint8 gpios_clocks_en;   // enable clocks of the all peripheral, gpios from A to H, adc, aes, rng
+    uint8 adc_en;
 }Mcu_ConfigType; /* SWS_Mcu_00249, SWS_Mcu_00131*/
 
 typedef enum {

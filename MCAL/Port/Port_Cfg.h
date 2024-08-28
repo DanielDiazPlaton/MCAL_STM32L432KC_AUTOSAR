@@ -19,10 +19,10 @@ Port_ConfigType port_driver_cfg[] =
 {
     {
         GPIOA,
+        GPIO_MODER_MODE0,
         0,
         0,
-        0,
-        GPIO_MODER_MODE8
+        GPIO_MODER_MODE8 | GPIO_MODER_MODE0
     },
     {
         GPIOB,

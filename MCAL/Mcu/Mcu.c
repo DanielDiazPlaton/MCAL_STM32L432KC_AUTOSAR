@@ -11,8 +11,11 @@
 
 void Mcu_Init( const Mcu_ConfigType* ConfigPtr )
 {
-    // Enable ports in the MCU  (SWS_Mcu_00248)
-    RCC->AHB2ENR |= ConfigPtr->RCC_AHB2ENR_cfg;
+    // Enable gpio clocks in the MCU  (SWS_Mcu_00248)
+    RCC->AHB2ENR |= ConfigPtr->gpios_clocks_en;
+    // Enable adc clock
+    if(1u == ConfigPtr->adc_en)
+        RCC->AHB2ENR |= RCC_AHB2ENR_ADCEN;
 
     // Enable PLL in the MCU
 }

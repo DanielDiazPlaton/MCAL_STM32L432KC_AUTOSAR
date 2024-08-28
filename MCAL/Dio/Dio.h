@@ -40,11 +40,6 @@ typedef uint8 Dio_LevelType;                        /* SWS_Dio_00185 */
 
 typedef uint32 Dio_PortLevelType;                   /* SWS_Dio_00186 */
 
-#define PORT_B_PIN_3            (16U)         /* I/O       */
-#define PORT_B_PIN_4            (17U)         /* I/O       */
-#define PORT_B_PIN_5            (18U)         /* I/O       */
-#define PORT_A_PIN_8            (8U)          /* PWM1/1    */
-
 /******************************************************************
  **                      FUNCTIONS PROTOTYPES                    **
  ******************************************************************/
