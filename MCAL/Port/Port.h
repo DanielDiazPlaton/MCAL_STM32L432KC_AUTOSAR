@@ -1,13 +1,9 @@
-/**
- ******************************************************************************
+/********************************************************************************
  * @file           : port.h
  * @author         : Daniel Diaz Platon
  * @brief          : The PORT Driver module shall initialize the whole port 
  *                   structure of the microcontroller. SWS_Port_00001
- ******************************************************************************
- * 
- * 
- */
+ *******************************************************************************/
 
 #ifndef PORT_H_
 #define PORT_H_
@@ -60,7 +56,7 @@ typedef uint32 Port_PinModeType;    /* SWS_Port_00231, SWS_Port_00124, SWS_Port_
 #define PORT_A_PIN_5            (5U)          /* SPI1_SCLK */
 #define PORT_A_PIN_6            (6U)          /* SPI1_MISO */
 #define PORT_A_PIN_7            (7U)          /* SPI1_MOSI */
-#define PORT_A_PIN_8            (8U)          /* PWM1/1    */
+#define PORT_A_PIN_8            (8U)          /* PWM1/1    */ /* button */
 #define PORT_A_PIN_9            (9U)          /* UART1_TX  */
 #define PORT_A_PIN_10           (10U)         /* UART1_RX  */
 #define PORT_A_PIN_11           (11U)         /* CAN_RD    */
@@ -69,7 +65,7 @@ typedef uint32 Port_PinModeType;    /* SWS_Port_00231, SWS_Port_00124, SWS_Port_
 #define PORT_B_PIN_0            (13U)         /* ADC1/15   */
 #define PORT_B_PIN_1            (14U)         /* PWM1/3N   */
 #define PORT_B_PIN_2            (15U)
-#define PORT_B_PIN_3            (16U)         /* I/O       */
+#define PORT_B_PIN_3            (16U)         /* I/O       */   /* LED3 */
 #define PORT_B_PIN_4            (17U)         /* I/O       */
 #define PORT_B_PIN_5            (18U)         /* I/O       */
 #define PORT_B_PIN_6            (19U)         /* I2C_SCL   */

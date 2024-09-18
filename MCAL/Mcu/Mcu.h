@@ -1,12 +1,9 @@
-/**
- ******************************************************************************
+/*************************************************************************************************************************************************
  * @file           : Mcu.h
  * @author         : Daniel Diaz Platon
  * @brief          : The MCU Driver [MicroController Unit] provides services for basic microcontroller initialization, power down functionality,
  *                   reset an microcontroller specific functions required from other MCAL software modules.
- ******************************************************************************
- * 
- */
+ *************************************************************************************************************************************************/
 
 #ifndef MCU_H_
 #define MCU_H_

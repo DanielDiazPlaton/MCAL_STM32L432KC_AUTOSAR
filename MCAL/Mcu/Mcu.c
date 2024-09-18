@@ -1,9 +1,9 @@
-/*
- * Mcu.c
- * Created on: Jan 13, 2023
- * Author: Daniel Diaz Platon
- * 
- */
+/*************************************************************************************************************************************************
+ * @file           : Mcu.c
+ * @author         : Daniel Diaz Platon
+ * @brief          : The MCU Driver [MicroController Unit] provides services for basic microcontroller initialization, power down functionality,
+ *                   reset an microcontroller specific functions required from other MCAL software modules.
+ *************************************************************************************************************************************************/
 
 
 #include "Mcu.h"
@@ -11,11 +11,16 @@
 
 void Mcu_Init( const Mcu_ConfigType* ConfigPtr )
 {
-    // Enable gpio clocks in the MCU  (SWS_Mcu_00248)
+    /* Enable gpio clocks in the MCU  (SWS_Mcu_00248) */
     RCC->AHB2ENR |= ConfigPtr->gpios_clocks_en;
-    // Enable adc clock
+    /* Enable adc clock */
     if(1u == ConfigPtr->adc_en)
         RCC->AHB2ENR |= RCC_AHB2ENR_ADCEN;
+
+    /* Enable FPU */
+    #if (__FPU_PRESENT == 1) && (__FPU_USED == 1)
+        SCB->CPACR |= ((3UL << 20U) | (3UL << 22U));
+    #endif
 
     // Enable PLL in the MCU
 }
